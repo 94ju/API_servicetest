@@ -2,6 +2,10 @@ const express=require('express');
 const app=express();
 const fetch =require('node-fetch');
 
+app.get('/',(req,res)=>{
+    res.send('Check API service');
+})
+
 app.get('/statetocode/:state',async(req,res)=>{
    
     const state=req.params.state;
