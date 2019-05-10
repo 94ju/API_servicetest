@@ -9,6 +9,7 @@ app.get('/',(req,res)=>{
 app.get('/statetocode/:state',async(req,res)=>{
    
     const state=req.params.state;
+    //getting data to find the code
     const statelist = await fetch("http://localhost:3000/getstate");
     const jsonstatelist =await statelist.json();
     const code =jsonstatelist.find(element => element.name===state).abbreviation;
